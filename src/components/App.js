@@ -15,10 +15,11 @@ function App() {
   useEffect(()=> {
     fetch('./data.json')
     .then(response => response.json())
-    .then(setAppointments);
-    
+    .then(setAppointments)
   }, []);
-  
+
+ 
+
   return (
     <main className="page bg-white" id="petratings">
     <div className="container">
@@ -26,8 +27,8 @@ function App() {
         <div className="col-md-12 bg-white">
           <div className="container">
           <AddAppointments/>
-            <ListAppointments/>
-              <SearchAppointments/>
+          <ListAppointments appointments = {appointments} />
+          <SearchAppointments/>
           </div>
         </div>
       </div>
@@ -35,5 +36,6 @@ function App() {
   </main>
   );
 }
+
 
 export default App;
